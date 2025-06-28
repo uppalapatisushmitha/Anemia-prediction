@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Anemia Prediction</title>
+    <style>
+        body {
+            background-color: #ff0066;
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header{
+            display: flex;
+            flex-direction: row;
+            position: fixed;
+            background-color:white;
+            width: 100%;
+            top: 0px;
+            right: 0;
+            left: 0;
+            padding: 15px;
+
+        }
+
+        .first-section{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+            margin-right: 20px;
+            color: rgb(57, 123, 216);
+            font-size: 25px;
+            font-weight: bolder;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .middle-section{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .middle-section ul{
+            display: flex;
+            flex-direction: row;
+            margin-left: 800px; 
+            height: 20px;
+            
+        }
+
+        .middle-section li{
+            display: flex;
+            flex-direction: row;
+            list-style-type:none;
+            margin-right: 40px;
+            font-size: 16px;
+            color: rgb(119, 165, 240);
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .middle-section li:hover{
+            border-bottom:solid;
+            border-bottom-color: rgb(15, 25, 168);
+        }
+
+
+
+        .container {
+            background-color: #99ccff;
+            padding: 60px;
+            padding-bottom: 15px;
+            display: flex;
+            gap: 54px;
+        }
+
+        .box1 {
+            padding-top: 10px;
+            text-align: justify;
+            text-justify: inter-word;
+            color: rgb(55, 52, 52);
+            height: 600px;
+        }
+
+        .box1 h1 {
+            color: rgb(5, 29, 63);
+            font-family: "Times New Roman", Times, serif;
+            padding-right: 550px;
+            font-size: 45px;
+        }
+
+        .box1 p {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            font-size: 20px;
+        }
+
+        .box2 {
+            display: flex;
+            flex-direction: column;
+            height: 450px;
+            width: 680px;
+            padding-top: 120px;
+        }
+
+        img {
+            border-radius: 25px;
+        }
+
+        .tooldiv {
+            font-family: Arial, sans-serif;
+            padding-bottom: 30px;
+            opacity: 0; 
+            transition: opacity 0.5s ease-in-out; 
+        }
+
+        h1 {
+            text-align: center;
+            color: #efeaea;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        form {
+            width: 600px;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input[type="number"]:focus {
+            border-color: #007bff;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #0056b3;
+        }
+
+        .prediction {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #f6f6f6;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="first-section">
+            Anemia Prediction Tool
+        </div>
+        <div class="middle-section">
+            <ul>
+                <li onclick="scrollToTool()">Go To Tool</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box1">
+            <h1>Anemia</h1>
+            <p> Anemia is a medical condition characterized by a deficiency in red blood cells or hemoglobin, resulting in reduced oxygen transport capacity in the blood.
+                This condition can lead to symptoms such as fatigue, weakness, shortness of breath, and dizziness.
+                Using the below tool, we can predict the presence of anemia. 
+                By inputting key indicators such as hemoglobin, mean corpuscular hemoglobin concentration (MCHC), mean corpuscular volume (MCV), and mean corpuscular hemoglobin (MCH), this tool utilizes machine learning algorithms to assess the likelihood of anemia.
+                This predictive tool aids in medical diagnosis by providing healthcare professionals with an additional means to identify potential cases of anemia. 
+                By enabling early detection, it facilitates timely intervention and treatment, thereby mitigating the risk of complications and improving patient outcomes. 
+                With its user-friendly interface and accurate predictions, this tool serves as a valuable resource in the medical field, enhancing diagnostic capabilities and contributing to better healthcare delivery.</p>
+        </div>
+        <div class="box2">
+            <img src="{{ url_for('static', filename='anemia.png') }}">
+        </div>
+    </div>
+
+    <svg class="separator" width="100%" height="120" viewBox="0.1 0.1 180 40" preserveAspectRatio="none">
+        <g transform="translate(-18.298844,-77.973964)">
+            <path style="fill:#409ee6;" d="M 31.615583,86.351641 H 192.16499 v 26.901969 c 0,0 -32.03411,-14.237983 -59.62682,-12.72484 -22.34188,1.2252 -54.779359,9.72634 -54.779359,9.72634 0,0 -22.029534,3.62882 -34.471238,-1.88988 -12.441702,-5.51871 -11.67199,-22.013589 -11.67199,-22.013589 z" />
+            <path style="fill:#99ccff;" d="M 18.441597,78.106256 H 198.58126 v 39.288614 c 0,0 -43.10672,-27.825245 -73.47599,-19.687823 -30.369264,8.137423 -46.832208,12.548653 -46.832208,12.548653 0,0 -32.775418,8.05972 -46.735258,0 C 17.577964,102.19598 18.441597,78.106256 18.441597,78.106256 Z" />
+        </g>
+    </svg>
+
+    <div class="tooldiv" id="tooldiv">
+        <h1>Anemia Prediction Tool</h1>
+        <form id="prediction-form">
+            <label for="hemoglobin">Hemoglobin:</label>
+            <input type="number" id="hemoglobin" name="hemoglobin" step="0.1" required><br>
+            <label for="mchc">MCHC:</label>
+            <input type="number" id="mchc" name="mchc" step="0.1" required><br>
+            <label for="mcv">MCV:</label>
+            <input type="number" id="mcv" name="mcv" step="0.1" required><br>
+            <label for="mch">MCH:</label>
+            <input type="number" id="mch" name="mch" step="0.1" required><br>
+            <input type="submit" value="Predict">
+            <input type="reset" value="Reset" onclick="clearText()">
+        </form>
+        <p id="prediction-result" class="prediction"></p>
+    </div>
+
+    <script>
+        function scrollToTool() {
+            var toolDiv = document.getElementById('tooldiv');
+            toolDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.animation = "fadeIn 2s ease-in-out";
+                }
+            });
+        });
+
+        const toolDiv = document.getElementById("tooldiv");
+        observer.observe(toolDiv);
+
+        document.getElementById("prediction-form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            var formData = new FormData(this);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/predict", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    document.getElementById("prediction-result").textContent = " " + xhr.responseText;
+                }
+            };
+            xhr.send(new URLSearchParams(formData).toString());
+        });
+
+        function clearText() {
+            document.getElementById("prediction-result").textContent = "";
+        }
+    </script>
+</body>
+</html>
